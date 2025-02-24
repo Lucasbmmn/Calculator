@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee1a984b-5f2b-47b8-b1b4-a19cc3b0eb0c" name="Changes" comment="" />
+    <list default="true" id="ee1a984b-5f2b-47b8-b1b4-a19cc3b0eb0c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/lucasbmmn/calculator/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/lucasbmmn/calculator/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/lucasbmmn/calculator/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/lucasbmmn/calculator/MainWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fr/lucasbmmn/calculator/main-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fr/lucasbmmn/calculator/main-view.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,6 +26,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Lucasbmmn&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Lucasbmmn/Calculator.git&quot;,
+    &quot;accountId&quot;: &quot;f93ece36-1f11-4a20-8ca6-fcd0c86d4760&quot;
+  }
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -42,12 +59,13 @@
     "Application.MainWindow.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Lucas/Documents/code/Java/projects/software/Calculator",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
 }]]></component>
   <component name="RunManager">

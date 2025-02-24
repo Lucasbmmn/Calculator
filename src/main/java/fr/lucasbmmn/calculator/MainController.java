@@ -102,6 +102,20 @@ public class MainController {
     }
 
     @FXML
+    private void onSignButtonClick() {
+        switch (this.currentStep) {
+            case "number1":
+                this.number1 = -this.number1;
+                this.resultLabel.setText(String.valueOf(number1));
+                break;
+            case "number2":
+                this.number2 = -this.number2;
+                this.resultLabel.setText(String.valueOf(number2));
+                break;
+        }
+    }
+
+    @FXML
     private void calculate() {
         double result = switch (this.operator) {
             case "+" -> this.number1 + this.number2;
@@ -111,5 +125,9 @@ public class MainController {
             default -> 0;
         };
         this.resultLabel.setText(String.valueOf(result));
+        this.number1 = 0;
+        this.number2 = 0;
+        this.currentStep = "number1";
+        System.out.println(this.resultLabel.getWidth());
     }
 }
