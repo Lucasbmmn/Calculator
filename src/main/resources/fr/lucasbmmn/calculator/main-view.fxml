@@ -13,7 +13,7 @@
       <VBox.margin>
          <Insets top="25.0" />
       </VBox.margin></Label>
-    <Label fx:id="resultLabel" alignment="CENTER_RIGHT" ellipsisString="" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="0" textAlignment="RIGHT" VBox.vgrow="SOMETIMES">
+    <Label fx:id="resultLabel" alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="0" textAlignment="RIGHT" VBox.vgrow="SOMETIMES">
        <font>
           <Font name="Calibri" size="50.0" />
        </font>
