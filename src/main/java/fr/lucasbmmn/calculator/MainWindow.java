@@ -13,7 +13,8 @@ public class MainWindow extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(MainWindow.class.getResource("main-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Calculator");
-        stage.setResizable(false);
+        stage.setMinWidth(300);
+        stage.setMinHeight(500);
         stage.setScene(scene);
         stage.show();
     }
