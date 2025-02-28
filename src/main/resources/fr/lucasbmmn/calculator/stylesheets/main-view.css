@@ -1,0 +1,36 @@
+VBox {
+    -fx-background-color: #202020;
+}
+.calculationlabel {
+    -fx-font-size: 15px;
+    -fx-text-fill: #ffffff;
+    -fx-opacity: 0.5;
+}
+.resultlabel {
+    -fx-font-size: 45px;
+    -fx-text-fill: #ffffff;
+    -fx-padding: 10px;
+}
+.button {
+    -fx-font-size: 21px;
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 5px;
+}
+.lightbutton {
+    -fx-background-color: #383c40;
+}
+.lightbutton:hover {
+    -fx-background-color: #323232;
+}
+.darkbutton {
+    -fx-background-color: #323232;
+}
+.darkbutton:hover {
+    -fx-background-color: #383c40;
+}
+#equalsbutton {
+    -fx-background-color: #4cc2ff;
+}
+#equalsbutton:hover {
+    -fx-background-color: #47b1e8;
+}

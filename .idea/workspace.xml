@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee1a984b-5f2b-47b8-b1b4-a19cc3b0eb0c" name="Changes" comment="Number formating, function interweaving">
+    <list default="true" id="ee1a984b-5f2b-47b8-b1b4-a19cc3b0eb0c" name="Changes" comment="Negation correction&#10;V1.1">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/fr/lucasbmmn/calculator/stylesheets/main-view.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/lucasbmmn/calculator/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/lucasbmmn/calculator/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/fr/lucasbmmn/calculator/main-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fr/lucasbmmn/calculator/main-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,21 +55,21 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MainWindow.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lucas/Downloads/Calculator-master/Calculator-master&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.folding&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.HelloApplication.executor": "Run",
+    "Application.MainWindow.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Lucas/Downloads/Calculator-master/Calculator-master",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.sourceCode.Groovy"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="MainWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="fr.lucasbmmn.calculator.MainWindow" />
@@ -122,7 +123,23 @@
       <option name="project" value="LOCAL" />
       <updated>1740612201973</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Decimals, Percents&#10;V1">
+      <option name="closed" value="true" />
+      <created>1740764498700</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1740764498700</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Negation correction&#10;V1.1">
+      <option name="closed" value="true" />
+      <created>1740772163394</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1740772163394</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -132,6 +149,23 @@
     <MESSAGE value="Sign button and not resizable" />
     <MESSAGE value="Backspace, Clear entry, Clear, Inverse, Square, Square root. Remove Operator.java enum." />
     <MESSAGE value="Number formating, function interweaving" />
-    <option name="LAST_COMMIT_MESSAGE" value="Number formating, function interweaving" />
+    <MESSAGE value="Decimals, Percents&#10;V1" />
+    <MESSAGE value="Negation correction&#10;V1.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Negation correction&#10;V1.1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/fr/lucasbmmn/calculator/MainController.java</url>
+          <line>195</line>
+          <properties class="fr.lucasbmmn.calculator.MainController" method="onSignButtonClick">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

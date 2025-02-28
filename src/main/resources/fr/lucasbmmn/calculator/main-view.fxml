@@ -3,25 +3,18 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="500" minWidth="300" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.lucasbmmn.calculator.MainController">
-   <Label fx:id="calculationLabel" alignment="BOTTOM_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" opacity="0.5" VBox.vgrow="SOMETIMES">
-      <font>
-         <Font name="Calibri" size="20.0" />
-      </font>
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="500" minWidth="300" stylesheets="@stylesheets/main-view.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.lucasbmmn.calculator.MainController">
+   <Label fx:id="calculationLabel" alignment="BOTTOM_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" opacity="0.5" styleClass="calculationlabel" stylesheets="@stylesheets/main-view.css" VBox.vgrow="SOMETIMES">
       <VBox.margin>
          <Insets top="25.0" />
       </VBox.margin></Label>
-    <Label fx:id="resultLabel" alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="0" textAlignment="RIGHT" VBox.vgrow="SOMETIMES">
-       <font>
-          <Font name="Calibri" size="50.0" />
-       </font>
+    <Label fx:id="resultLabel" alignment="CENTER_RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="resultlabel" stylesheets="@stylesheets/main-view.css" text="0" textAlignment="RIGHT" textOverrun="WORD_ELLIPSIS" VBox.vgrow="SOMETIMES">
       <VBox.margin>
          <Insets bottom="10.0" />
       </VBox.margin>
     </Label>
-    <GridPane VBox.vgrow="SOMETIMES">
+    <GridPane stylesheets="@stylesheets/main-view.css" VBox.vgrow="SOMETIMES">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="65.0" prefWidth="75.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="65.0" prefWidth="75.0" />
@@ -36,196 +29,124 @@
                 <RowConstraints maxHeight="1.7976931348623157E308" minHeight="40.0" prefHeight="50.0" vgrow="SOMETIMES" />
                 <RowConstraints maxHeight="1.7976931348623157E308" minHeight="40.0" prefHeight="50.0" vgrow="SOMETIMES" />
         </rowConstraints>
-        <Button layoutX="235.0" layoutY="460.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onPercentButtonClick" text="\%" textAlignment="CENTER">
-            <font>
-                <Font name="Calibri" size="21.0" />
-            </font>
+        <Button layoutX="235.0" layoutY="460.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onPercentButtonClick" styleClass="darkbutton" stylesheets="@stylesheets/main-view.css" text="\%" textAlignment="CENTER">
             <GridPane.margin>
-                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                <Insets bottom="1.5" left="1.5" right="1.5" top="1.5" />
             </GridPane.margin>
         </Button>
-        <Button layoutX="10.0" layoutY="411.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onClearEntryButtonClick" text="CE" textAlignment="CENTER" GridPane.columnIndex="1">
-            <font>
-                <Font name="Calibri" size="21.0" />
-            </font>
+        <Button layoutX="10.0" layoutY="411.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onClearEntryButtonClick" styleClass="darkbutton" stylesheets="@stylesheets/main-view.css" text="CE" textAlignment="CENTER" GridPane.columnIndex="1">
             <GridPane.margin>
-                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                <Insets bottom="1.5" left="1.5" right="1.5" top="1.5" />
             </GridPane.margin>
         </Button>
-        <Button layoutX="160.0" layoutY="460.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onClearButtonClick" text="C" textAlignment="CENTER" GridPane.columnIndex="2">
-            <font>
-                <Font name="Calibri" size="21.0" />
-            </font>
+        <Button layoutX="160.0" layoutY="460.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onClearButtonClick" styleClass="darkbutton" stylesheets="@stylesheets/main-view.css" text="C" textAlignment="CENTER" GridPane.columnIndex="2">
             <GridPane.margin>
-                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                <Insets bottom="1.5" left="1.5" right="1.5" top="1.5" />
             </GridPane.margin>
         </Button>
-        <Button layoutX="85.0" layoutY="460.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onBackspaceButtonClick" text="⌫" textAlignment="CENTER" GridPane.columnIndex="3">
-            <font>
-                <Font name="Calibri" size="21.0" />
-            </font>
+        <Button layoutX="85.0" layoutY="460.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onBackspaceButtonClick" styleClass="darkbutton" stylesheets="@stylesheets/main-view.css" text="⌫" textAlignment="CENTER" GridPane.columnIndex="3">
             <GridPane.margin>
-                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                <Insets bottom="1.5" left="1.5" right="1.5" top="1.5" />
             </GridPane.margin>
         </Button>
-        <Button layoutX="10.0" layoutY="460.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onInverseButtonClick" text="1/x" textAlignment="CENTER" GridPane.rowIndex="1">
-            <font>
-                <Font name="Calibri" size="21.0" />
-            </font>
+        <Button layoutX="10.0" layoutY="460.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onInverseButtonClick" styleClass="darkbutton" stylesheets="@stylesheets/main-view.css" text="1/x" textAlignment="CENTER" GridPane.rowIndex="1">
             <GridPane.margin>
-                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                <Insets bottom="1.5" left="1.5" right="1.5" top="1.5" />
             </GridPane.margin>
         </Button>
-        <Button layoutX="85.0" layoutY="411.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onSquareButtonClick" text="x²" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
-            <font>
-                <Font name="Calibri" size="21.0" />
-            </font>
+        <Button layoutX="85.0" layoutY="411.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onSquareButtonClick" styleClass="darkbutton" stylesheets="@stylesheets/main-view.css" text="x²" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
             <GridPane.margin>
-                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                <Insets bottom="1.5" left="1.5" right="1.5" top="1.5" />
             </GridPane.margin>
         </Button>
-        <Button layoutX="10.0" layoutY="362.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onSquareRootButtonClick" text="√" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
-            <font>
-                <Font name="Calibri" size="21.0" />
-            </font>
+        <Button layoutX="10.0" layoutY="362.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onSquareRootButtonClick" styleClass="darkbutton" stylesheets="@stylesheets/main-view.css" text="√" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="1">
             <GridPane.margin>
-                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                <Insets bottom="1.5" left="1.5" right="1.5" top="1.5" />
             </GridPane.margin>
         </Button>
-        <Button layoutX="235.0" layoutY="362.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onDivisionButtonClick" text="÷" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="1">
-            <font>
-                <Font name="Calibri" size="21.0" />
-            </font>
+        <Button layoutX="235.0" layoutY="362.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onDivisionButtonClick" styleClass="darkbutton" stylesheets="@stylesheets/main-view.css" text="÷" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="1">
             <GridPane.margin>
-                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                <Insets bottom="1.5" left="1.5" right="1.5" top="1.5" />
             </GridPane.margin>
         </Button>
-        <Button layoutX="160.0" layoutY="411.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onSevenButtonClick" text="7" textAlignment="CENTER" GridPane.rowIndex="2">
-            <font>
-                <Font name="Calibri" size="21.0" />
-            </font>
+        <Button layoutX="160.0" layoutY="411.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onSevenButtonClick" styleClass="lightbutton" stylesheets="@stylesheets/main-view.css" text="7" textAlignment="CENTER" GridPane.rowIndex="2">
             <GridPane.margin>
-                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                <Insets bottom="1.5" left="1.5" right="1.5" top="1.5" />
             </GridPane.margin>
         </Button>
-        <Button layoutX="235.0" layoutY="411.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onEightButtonClick" text="8" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
-            <font>
-                <Font name="Calibri" size="21.0" />
-            </font>
+        <Button layoutX="235.0" layoutY="411.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onEightButtonClick" styleClass="lightbutton" stylesheets="@stylesheets/main-view.css" text="8" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
             <GridPane.margin>
-                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                <Insets bottom="1.5" left="1.5" right="1.5" top="1.5" />
             </GridPane.margin>
         </Button>
-        <Button layoutX="85.0" layoutY="362.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onNineButtonClick" text="9" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2">
-            <font>
-                <Font name="Calibri" size="21.0" />
-            </font>
+        <Button layoutX="85.0" layoutY="362.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onNineButtonClick" styleClass="lightbutton" stylesheets="@stylesheets/main-view.css" text="9" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2">
             <GridPane.margin>
-                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                <Insets bottom="1.5" left="1.5" right="1.5" top="1.5" />
             </GridPane.margin>
         </Button>
-        <Button layoutX="160.0" layoutY="362.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onMultiplicationButtonClick" text="×" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="2">
-            <font>
-                <Font name="Calibri" size="21.0" />
-            </font>
+        <Button layoutX="160.0" layoutY="362.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onMultiplicationButtonClick" styleClass="darkbutton" stylesheets="@stylesheets/main-view.css" text="×" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="2">
             <GridPane.margin>
-                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                <Insets bottom="1.5" left="1.5" right="1.5" top="1.5" />
             </GridPane.margin>
         </Button>
-        <Button layoutX="10.0" layoutY="460.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onFourButtonClick" text="4" textAlignment="CENTER" GridPane.rowIndex="3">
-            <font>
-                <Font name="Calibri" size="21.0" />
-            </font>
+        <Button layoutX="10.0" layoutY="460.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onFourButtonClick" styleClass="lightbutton" stylesheets="@stylesheets/main-view.css" text="4" textAlignment="CENTER" GridPane.rowIndex="3">
             <GridPane.margin>
-                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                <Insets bottom="1.5" left="1.5" right="1.5" top="1.5" />
             </GridPane.margin>
         </Button>
-        <Button layoutX="235.0" layoutY="460.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onFiveButtonClick" text="5" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3">
-            <font>
-                <Font name="Calibri" size="21.0" />
-            </font>
+        <Button layoutX="235.0" layoutY="460.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onFiveButtonClick" styleClass="lightbutton" stylesheets="@stylesheets/main-view.css" text="5" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3">
             <GridPane.margin>
-                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                <Insets bottom="1.5" left="1.5" right="1.5" top="1.5" />
             </GridPane.margin>
         </Button>
-        <Button layoutX="160.0" layoutY="460.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onSixButtonClick" text="6" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="3">
-            <font>
-                <Font name="Calibri" size="21.0" />
-            </font>
+        <Button layoutX="160.0" layoutY="460.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onSixButtonClick" styleClass="lightbutton" stylesheets="@stylesheets/main-view.css" text="6" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="3">
             <GridPane.margin>
-                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                <Insets bottom="1.5" left="1.0" right="1.0" top="1.5" />
             </GridPane.margin>
         </Button>
-        <Button layoutX="85.0" layoutY="460.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onSubtractionButtonClick" text="-" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="3">
-            <font>
-                <Font name="Calibri" size="21.0" />
-            </font>
+        <Button layoutX="85.0" layoutY="460.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onSubtractionButtonClick" styleClass="darkbutton" stylesheets="@stylesheets/main-view.css" text="-" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="3">
             <GridPane.margin>
-                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                <Insets bottom="1.5" left="1.5" right="1.5" top="1.5" />
             </GridPane.margin>
         </Button>
-        <Button layoutX="235.0" layoutY="460.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onOneButtonClick" text="1" textAlignment="CENTER" GridPane.rowIndex="4">
-            <font>
-                <Font name="Calibri" size="21.0" />
-            </font>
+        <Button layoutX="235.0" layoutY="460.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onOneButtonClick" styleClass="lightbutton" stylesheets="@stylesheets/main-view.css" text="1" textAlignment="CENTER" GridPane.rowIndex="4">
             <GridPane.margin>
-                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                <Insets bottom="1.5" left="1.5" right="1.5" top="1.5" />
             </GridPane.margin>
         </Button>
-        <Button layoutX="160.0" layoutY="460.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onTwoButtonClick" text="2" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4">
-            <font>
-                <Font name="Calibri" size="21.0" />
-            </font>
+        <Button layoutX="160.0" layoutY="460.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onTwoButtonClick" styleClass="lightbutton" stylesheets="@stylesheets/main-view.css" text="2" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4">
             <GridPane.margin>
-                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                <Insets bottom="1.5" left="1.5" right="1.5" top="1.5" />
             </GridPane.margin>
         </Button>
-        <Button layoutX="10.0" layoutY="411.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onThreeButtonClick" text="3" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="4">
-            <font>
-                <Font name="Calibri" size="21.0" />
-            </font>
+        <Button layoutX="10.0" layoutY="411.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onThreeButtonClick" styleClass="lightbutton" stylesheets="@stylesheets/main-view.css" text="3" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="4">
             <GridPane.margin>
-                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                <Insets bottom="1.5" left="1.5" right="1.5" top="1.5" />
             </GridPane.margin>
         </Button>
-        <Button layoutX="85.0" layoutY="411.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAdditionButtonClick" text="+" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="4">
-            <font>
-                <Font name="Calibri" size="21.0" />
-            </font>
+        <Button layoutX="85.0" layoutY="411.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onAdditionButtonClick" styleClass="darkbutton" stylesheets="@stylesheets/main-view.css" text="+" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="4">
             <GridPane.margin>
-                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                <Insets bottom="1.5" left="1.5" right="1.5" top="1.5" />
             </GridPane.margin>
         </Button>
-        <Button layoutX="85.0" layoutY="460.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onSignButtonClick" text="+/-" textAlignment="CENTER" GridPane.rowIndex="5">
-            <font>
-                <Font name="Calibri" size="21.0" />
-            </font>
+        <Button layoutX="85.0" layoutY="460.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onSignButtonClick" styleClass="lightbutton" stylesheets="@stylesheets/main-view.css" text="+/-" textAlignment="CENTER" GridPane.rowIndex="5">
             <GridPane.margin>
-                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                <Insets bottom="1.5" left="1.5" right="1.5" top="1.5" />
             </GridPane.margin>
         </Button>
-        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onZeroButtonClick" text="0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="5">
-            <font>
-                <Font name="Calibri" size="21.0" />
-            </font>
+        <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onZeroButtonClick" styleClass="lightbutton" stylesheets="@stylesheets/main-view.css" text="0" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="5">
             <GridPane.margin>
-                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                <Insets bottom="1.5" left="1.5" right="1.5" top="1.5" />
             </GridPane.margin>
         </Button>
-        <Button layoutX="85.0" layoutY="460.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onPointButtonClick" text="." textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="5">
-            <font>
-                <Font name="Calibri" size="21.0" />
-            </font>
+        <Button layoutX="85.0" layoutY="460.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#onPointButtonClick" styleClass="lightbutton" stylesheets="@stylesheets/main-view.css" text="." textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="5">
             <GridPane.margin>
-                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                <Insets bottom="1.5" left="1.5" right="1.5" top="1.5" />
             </GridPane.margin>
         </Button>
-        <Button layoutX="160.0" layoutY="460.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#calculate" text="=" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="5">
-            <font>
-                <Font name="Calibri" size="21.0" />
-            </font>
+        <Button id="equalsbutton" layoutX="160.0" layoutY="460.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#calculate" stylesheets="@stylesheets/main-view.css" text="=" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="5">
             <GridPane.margin>
-                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                <Insets bottom="1.5" left="1.5" right="1.5" top="1.5" />
             </GridPane.margin>
         </Button>
         <VBox.margin>
@@ -233,6 +154,6 @@
         </VBox.margin>
     </GridPane>
     <padding>
-        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+        <Insets bottom="2.0" left="1.0" right="1.0" top="1.0" />
     </padding>
 </VBox>
