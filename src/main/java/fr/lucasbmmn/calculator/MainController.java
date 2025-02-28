@@ -194,14 +194,16 @@ public class MainController {
      */
     @FXML
     private void onSignButtonClick() {
-        if (this.calculationStep.equals("number1")) {
+        if (this.calculationStep.equals("number1") || this.calculationStep.equals("operator")) {
             if (this.number1.charAt(0) == '-') this.number1 = this.number1.substring(1);
             else this.number1 = '-' + this.number1;
         }
-        else if (this.calculationStep.equals("number2")) {
+        else if (this.calculationStep.equals("number2") || this.calculationStep.equals("postPercent")) {
             if (this.number2.charAt(0) == '-') this.number2 = this.number2.substring(1);
             else this.number2 = '-' + this.number2;
         }
+        this.updateCalculationLabel();
+        this.updateResultLabel();
     }
 
     /**
@@ -415,11 +417,20 @@ public class MainController {
         if (number.startsWith("sqr(")) {
             result = Math.pow(eval(number.substring(4, number.length() - 1)), 2);
         }
+        else if (number.startsWith("-sqr(")) {
+            result = -(Math.pow(eval(number.substring(5, number.length() - 1)), 2));
+        }
         else if (number.startsWith("sqrt(")) {
             result = Math.sqrt(eval(number.substring(5, number.length() - 1)));
         }
+        else if (number.startsWith("-sqrt(")) {
+            result = -(Math.sqrt(eval(number.substring(6, number.length() - 1))));
+        }
         else if (number.startsWith("1/(")) {
             result = 1 / eval(number.substring(3, number.length()-1));
+        }
+        else if (number.startsWith("-1/(")) {
+            result = 1 / -(eval(number.substring(4, number.length()-1)));
         }
         else {
             result = Double.parseDouble(number);
@@ -437,23 +448,26 @@ public class MainController {
         String formatedNumber = String.valueOf(number);
         if (number == (int) number) formatedNumber = String.valueOf((int) number);
 
+
+        int numStartPos = formatedNumber.indexOf('-') + 1;
         int pointPos = formatedNumber.indexOf('.');
         if (pointPos == -1) pointPos = formatedNumber.length();
-        int ePos = formatedNumber.indexOf('E');
-        if (ePos == -1) ePos = formatedNumber.length();
+        int numEndPos = formatedNumber.indexOf('E');
+        if (numEndPos == -1) numEndPos = formatedNumber.length();
 
         int counter = 0;
-        for (int i = pointPos+1; i < ePos; i++) {
+        for (int i = pointPos+1; i < numEndPos; i++) {
             if (counter == 3) {
                 formatedNumber =
                         formatedNumber.substring(0, i) + ' ' + formatedNumber.substring(i);
                 counter = 0;
-                ePos++;
+                numEndPos++;
             }
             else counter++;
         }
+
         counter = 0;
-        for (int i = pointPos; i > 0; i--) {
+        for (int i = pointPos; i > numStartPos; i--) {
             if (counter == 3) {
                 formatedNumber =
                         formatedNumber.substring(0, i) + ' ' + formatedNumber.substring(i);
