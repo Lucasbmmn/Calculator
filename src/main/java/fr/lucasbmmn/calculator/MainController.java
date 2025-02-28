@@ -106,20 +106,23 @@ public class MainController {
      * @param digit The digit clicked by the user.
      */
     private void onDigitButtonClick(char digit) {
+        if (this.calculationStep.equals("operator")) {
+            this.number1 = "";
+            this.calculationStep = "number1";
+        }
+
         if (this.calculationStep.equals("result")) {
             this.calculationStep = "number1";
             this.updateCalculationLabel();
         }
 
-        if (this.calculationStep.equals("number1") && this.number1.length() < 9) {
+        if ((this.calculationStep.equals("number1")) && this.number1.length() < 9) {
             if (this.number1.equals("0")) this.number1 = "";
             this.number1 += digit;
-            this.calculationStep = "number1";
         }
         else if (this.calculationStep.equals("number2") && this.number2.length() < 9) {
             if (this.number2.equals("0")) this.number2 = "";
             this.number2 += digit;
-            this.calculationStep = "number2";
         }
         this.updateResultLabel();
     }
@@ -163,16 +166,26 @@ public class MainController {
      * @param operatorClicked The operator clicked by the user.
      */
     private void onOperatorButtonClick(char operatorClicked) {
-        if (this.calculationStep.equals("number1") || (this.calculationStep.equals("number2") && number2.equals("0"))){
+        if (this.calculationStep.equals("number1") ||
+                (this.calculationStep.equals("number2") && number2.equals("0")) ||
+                this.calculationStep.equals("operator")){
+            if (this.number1.endsWith(".")) {
+                this.number1 = this.number1.substring(0, this.number1.length() - 1);
+            }
             this.operator = operatorClicked;
             this.calculationStep = "number2";
-            this.updateCalculationLabel();
         }
-        else if (this.calculationStep.equals("number2")) {
-            calculate();
+        else if (this.calculationStep.equals("number2") ||
+                this.calculationStep.equals("postPercent")) {
+            if (this.number2.endsWith(".")) {
+                this.number2 = this.number2.substring(0, this.number2.length() - 1);
+            }
+            this.calculate();
+            this.number1 = this.resultLabel.getText();
             this.operator = operatorClicked;
             this.calculationStep = "number2";
         }
+        this.updateCalculationLabel();
     }
 
     /**
@@ -201,7 +214,8 @@ public class MainController {
             this.number1 = this.number1.substring(0, this.number1.length()-1);
             if (this.number1.isEmpty()) this.number1 = "0";
         }
-        else if (this.calculationStep.equals("number2")) {
+        // If the number contains (, then it contain square, square root or inverse
+        else if (this.calculationStep.equals("number2") && !this.number2.contains("(")) {
             this.number2 = this.number2.substring(0, this.number2.length()-1);
             if (this.number2.isEmpty()) this.number2 = "0";
         }
@@ -214,7 +228,12 @@ public class MainController {
      */
     @FXML
     private void onPercentButtonClick() {
-        // TODO: Implement percent calculation
+        if (this.calculationStep.equals("number2") || this.calculationStep.equals("postPercent")) {
+            this.number2 = String.valueOf(this.eval(this.number1) * this.eval(this.number2) / 100);
+            this.calculationStep = "postPercent";
+            this.updateCalculationLabel();
+            this.updateResultLabel();
+        }
     }
 
     /**
@@ -223,11 +242,17 @@ public class MainController {
      */
     @FXML
     private void onClearEntryButtonClick() {
-        if (this.calculationStep.equals("number1")) {
-            this.number1 = "0";
-        }
-        else if (this.calculationStep.equals("number2")) {
-            this.number2 = "0";
+        switch (this.calculationStep) {
+            case "number1" -> this.number1 = "0";
+            case "operator" -> {
+                this.number1 = "0";
+                this.calculationStep = "number1";
+            }
+            case "number2" -> this.number2 = "0";
+            case "postPercent" -> {
+                this.number2 = "0";
+                this.calculationStep = "number2";
+            }
         }
         this.updateResultLabel();
     }
@@ -240,6 +265,7 @@ public class MainController {
     private void onClearButtonClick() {
         this.number1 = "0";
         this.number2 = "0";
+        this.operator = '?';
         this.calculationStep = "number1";
         this.updateCalculationLabel();
         this.updateResultLabel();
@@ -252,9 +278,16 @@ public class MainController {
     @FXML
     private void onInverseButtonClick() {
         if (this.calculationStep.equals("number1")) {
+            if (this.number1.endsWith(".")) {
+                this.number1 = this.number1.substring(0, this.number1.length() - 1);
+            }
             this.number1 = "1/(" + this.number1 + ")";
+            this.calculationStep = "operator";
         }
-        else if (this.calculationStep.equals("number2")) {
+        else if (this.calculationStep.equals("number2") || this.calculationStep.equals("postPercent")) {
+            if (this.number2.endsWith(".")) {
+                this.number2 = this.number2.substring(0, this.number2.length() - 1);
+            }
             this.number2 = "1/(" + this.number2 + ")";
         }
         this.updateCalculationLabel();
@@ -268,9 +301,16 @@ public class MainController {
     @FXML
     private void onSquareButtonClick() {
         if (this.calculationStep.equals("number1")) {
+            if (this.number1.endsWith(".")) {
+                this.number1 = this.number1.substring(0, this.number1.length() - 1);
+            }
             this.number1 = "sqr(" + this.number1 + ")";
+            this.calculationStep = "operator";
         }
-        else if (this.calculationStep.equals("number2")) {
+        else if (this.calculationStep.equals("number2") || this.calculationStep.equals("postPercent")) {
+            if (this.number2.endsWith(".")) {
+                this.number2 = this.number2.substring(0, this.number2.length() - 1);
+            }
             this.number2 = "sqr(" + this.number2 + ")";
         }
         this.updateCalculationLabel();
@@ -284,9 +324,16 @@ public class MainController {
     @FXML
     private void onSquareRootButtonClick() {
         if (this.calculationStep.equals("number1")) {
+            if (this.number1.endsWith(".")) {
+                this.number1 = this.number1.substring(0, this.number1.length() - 1);
+            }
             this.number1 = "sqrt(" + this.number1 + ")";
+            this.calculationStep = "operator";
         }
-        else if (this.calculationStep.equals("number2")) {
+        else if (this.calculationStep.equals("number2") || this.calculationStep.equals("postPercent")) {
+            if (this.number2.endsWith(".")) {
+                this.number2 = this.number2.substring(0, this.number2.length() - 1);
+            }
             this.number2 = "sqrt(" + this.number2 + ")";
         }
         this.updateCalculationLabel();
@@ -299,13 +346,13 @@ public class MainController {
      */
     @FXML
     private void onPointButtonClick() {
-        // TODO: Implement decimal numbers
         if (this.calculationStep.equals("number1")) {
-            // Handle decimal point for number1
+            if (!number1.contains(".")) this.number1 += '.';
         }
         else if (this.calculationStep.equals("number2")) {
-            // Handle decimal point for number2
+            if (!number2.contains(".")) this.number2 += '.';
         }
+        this.updateResultLabel();
     }
 
     /**
@@ -333,10 +380,12 @@ public class MainController {
      * Updates the result label with the current number or result.
      */
     private void updateResultLabel() {
-        if (this.calculationStep.equals("number1") || this.calculationStep.equals("operator"))
+        if (this.calculationStep.equals("number1") || this.calculationStep.equals("operator")) {
             this.resultLabel.setText(this.format(this.eval(this.number1)));
-        else if (this.calculationStep.equals("number2"))
+        }
+        else if (this.calculationStep.equals("number2") || this.calculationStep.equals("postPercent")) {
             this.resultLabel.setText(this.format(this.eval(this.number2)));
+        }
     }
 
     /**
@@ -344,9 +393,12 @@ public class MainController {
      */
     private void updateCalculationLabel() {
         String text = "";
-        if (this.operator != '?') {
+        if (this.calculationStep.equals("operator")) text = this.number1;
+        else if (this.operator != '?') {
             text = this.number1 + ' ' + this.operator;
-            if (this.calculationStep.equals("result")) text += ' ' + this.number2 + " =";
+            if (this.calculationStep.equals("result") || this.calculationStep.equals("postPercent")) text += ' ' + this.number2 + " =";
+                // If the number contains (, then it contain square, square root or inverse
+            else if (this.number2.contains("(")) text += ' ' + this.number2;
         }
         this.calculationLabel.setText(text);
     }
